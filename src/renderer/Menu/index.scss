@@ -1,0 +1,17 @@
+.menu__container {
+  width: 55px;
+  height: 100vh;
+  padding-top: 32px;
+  background-color: #33691e;
+  text-align: center;
+}
+
+.menu__item {
+  height: 40px;
+  vertical-align: middle;
+  color: #f1f8e9;
+  svg {
+    height: 40px;
+    line-height: 40px;
+  }
+}

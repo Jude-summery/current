@@ -1,3 +1,5 @@
+import './index.scss';
+
 export default function Chat() {
-  return <div>Chat</div>;
+  return <div className="chat__container">Chat</div>;
 }
