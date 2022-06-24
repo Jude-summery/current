@@ -1,7 +1,30 @@
+html {
+  overflow: hidden;
+}
+
 #layout {
-  #menu,
-  #contacts,
-  #chat {
-    float: left;
-  }
+  width: 100%;
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 55px;
+  height: 100%;
+}
+
+#contacts {
+  position: fixed;
+  top: 0;
+  left: 55px;
+  width: 250px;
+  height: 100%;
+}
+
+#chat {
+  position: relative;
+  margin-left: 305px;
+  width: calc(100% - 305px);
+  height: 100%;
 }

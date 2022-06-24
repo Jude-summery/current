@@ -1,5 +1,75 @@
 .contacts__container {
-  width: 250px;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   background-color: #ecebeb;
+
+  /* 滚动条整体 */
+  &::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+  }
+
+  /* 两个滚动条交接处 -- x轴和y轴 */
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  /* 滚动条滑块 */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(204, 201, 199, 0.2);
+  }
+
+  /* 滚动条轨道 */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.contacts__container:hover {
+  /* 滚动条整体 */
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    visibility: show;
+  }
+}
+
+.cowboy {
+  box-sizing: border-box;
+  height: 65px;
+  padding: 11px;
+
+  &:hover {
+    background-color: #dfdddb;
+  }
+
+  &__avatar,
+  &__info {
+    float: left;
+  }
+
+  &__avatar {
+    margin-right: 10px;
+  }
+
+  &__info {
+    height: 42px;
+    vertical-align: middle;
+
+    &__name {
+      font-size: 14px;
+      line-height: 26px;
+    }
+
+    &__recent {
+      font-size: 12px;
+      line-height: 16px;
+      color: #999999;
+    }
+  }
 }

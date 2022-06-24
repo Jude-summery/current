@@ -1,0 +1,17 @@
+.frame__operations {
+  -webkit-app-region: no-drag;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #484848;
+    font-weight: lighter;
+    &:hover {
+      background: #dfdfdf;
+    }
+  }
+}

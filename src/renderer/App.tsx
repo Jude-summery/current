@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
 import Menu from './Menu';
@@ -6,6 +7,10 @@ import Chat from './Chat';
 import './app.scss';
 
 const Layout = () => {
+  const [currentCowboy, setCurrentCowboy] = useState({
+    name: '',
+    recent: '',
+  });
   return (
     <div id="app">
       <CssBaseline />
@@ -14,10 +19,12 @@ const Layout = () => {
           <Menu />
         </div>
         <div id="contacts">
-          <Contacts />
+          <Contacts
+            changeCowboy={(cowboy: Cowboy) => setCurrentCowboy(cowboy)}
+          />
         </div>
         <div id="chat">
-          <Chat />
+          <Chat currentCowboy={currentCowboy} />
         </div>
       </div>
     </div>

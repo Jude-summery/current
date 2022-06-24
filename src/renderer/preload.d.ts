@@ -13,6 +13,11 @@ declare global {
       };
     };
   }
+
+  interface Cowboy {
+    name: string;
+    recent: string;
+  }
 }
 
 export {};
