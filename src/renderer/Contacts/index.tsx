@@ -1,6 +1,6 @@
 import './index.scss';
 import { useState } from 'react';
-import Cowboy from './Cowboy';
+import Cowboy from '../Cowboy';
 
 const defaultCowboy = [
   {

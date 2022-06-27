@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// 主色
+$base-color: #689f38;
+
+// 文字
+$text-color--primary: rgba(0, 0, 0, 0.87);
+$text-color--sub: #999999;
+
+// 边框
+$border-color: #dddddd;
+
+// 背景
+$chat-bg-color: #f5f5f5;
+$contacts-bg-color: #ecebeb;
+$contacts-bg-color--hover: #dfdddb;
+$cowboy__icon-bg: #9ccc65;
+$chat__bubble-bg: #9ccc65;
+$menu-bg: #33691e;
+$menu-color: #f1f8e9;
+
+// 滚动条
+$scrollbar-shadow-color: rgba(0, 0, 0, 0.2);
+$scrollbar-bg-color: rgba(204, 201, 199, 0.2);
+
+// 窗口操作按钮
+$frame__button-bg--hover: $contacts-bg-color--hover;
+$frame__button-color: #484848;

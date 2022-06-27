@@ -58,12 +58,38 @@ const configuration: webpack.Configuration = {
             },
           },
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // Provide path to the file with resources
+              sourceMap: true,
+              resources: path.join(
+                webpackPaths.srcRendererPath,
+                'variable.scss'
+              ),
+            },
+          },
         ],
         include: /\.module\.s?(c|a)ss$/,
       },
       {
         test: /\.s?(a|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // Provide path to the file with resources
+              sourceMap: true,
+              resources: path.join(
+                webpackPaths.srcRendererPath,
+                'variable.scss'
+              ),
+            },
+          },
+        ],
         exclude: /\.module\.s?(c|a)ss$/,
       },
       // Fonts

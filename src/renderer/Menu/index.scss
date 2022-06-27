@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   padding-top: 32px;
-  background-color: #33691e;
+  background-color: $menu-bg;
   text-align: center;
   -webkit-app-region: drag;
 }
@@ -10,7 +10,7 @@
 .menu__item {
   height: 40px;
   vertical-align: middle;
-  color: #f1f8e9;
+  color: $menu-color;
 
   svg {
     height: 40px;

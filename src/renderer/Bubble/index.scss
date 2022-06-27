@@ -1,0 +1,43 @@
+.bubble {
+  width: fit-content;
+  max-width: 250px;
+  overflow-wrap: anywhere;
+  position: relative;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.bubble__triangle {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  top: 15px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.bubble--ours {
+  @extend .bubble;
+  background-color: $chat__bubble-bg;
+  margin-right: 10px;
+  &::after {
+    @extend .bubble__triangle;
+    right: -12px;
+    border-right: 6px solid transparent;
+    border-left: 6px solid $chat__bubble-bg;
+  }
+}
+
+.bubble--others {
+  @extend .bubble;
+  background-color: #ffffff;
+  margin-left: 10px;
+  &::before {
+    @extend .bubble__triangle;
+    left: -12px;
+    border-right: 6px solid #ffffff;
+    border-left: 6px solid transparent;
+  }
+}

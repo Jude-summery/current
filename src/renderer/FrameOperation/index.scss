@@ -8,10 +8,10 @@
     border: none;
     background: transparent;
     cursor: pointer;
-    color: #484848;
+    color: $frame__button-color;
     font-weight: lighter;
     &:hover {
-      background: #dfdfdf;
+      background: $frame__button-bg--hover;
     }
   }
 }

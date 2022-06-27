@@ -4,6 +4,7 @@ import { CssBaseline } from '@mui/material';
 import Menu from './Menu';
 import Contacts from './Contacts';
 import Chat from './Chat';
+import './variable.scss';
 import './app.scss';
 
 const Layout = () => {
