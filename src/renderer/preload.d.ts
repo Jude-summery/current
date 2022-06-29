@@ -15,6 +15,7 @@ declare global {
   }
 
   interface Cowboy {
+    userId: number;
     name: string;
     recent: string;
   }

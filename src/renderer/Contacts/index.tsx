@@ -2,60 +2,71 @@ import './index.scss';
 import { useState } from 'react';
 import Cowboy from '../Cowboy';
 
-const defaultCowboy = [
-  {
-    name: 'John',
-    recent: 'How R U',
-  },
-  {
-    name: 'Dan',
-    recent: 'How R U',
-  },
-  {
-    name: 'Van',
-    recent: 'How R U',
-  },
-  {
-    name: 'Bob',
-    recent: 'How R U',
-  },
-  {
-    name: 'Anna',
-    recent: 'How R U',
-  },
-  {
-    name: 'Ellen',
-    recent: 'How R U',
-  },
-  {
-    name: 'Cindy',
-    recent: 'How R U',
-  },
-  {
-    name: 'Mimi',
-    recent: 'How R U',
-  },
-  {
-    name: 'Willam',
-    recent: 'How R U',
-  },
-  {
-    name: 'Kevin',
-    recent: 'How R U',
-  },
-  {
-    name: 'Larry',
-    recent: 'How R U',
-  },
-];
-
 interface ContactsProps {
   changeCowboy: (cowboy: Cowboy) => void;
+  currentCowboy: Cowboy;
 }
 
 export default function Contacts(props: ContactsProps) {
-  const { changeCowboy } = props;
-  const [cowboys, setCowboys] = useState(defaultCowboy);
+  const defaultCowboy = [
+    {
+      userId: 1,
+      name: 'John',
+      recent: 'How R U',
+    },
+    {
+      userId: 2,
+      name: 'Dan',
+      recent: 'How R U',
+    },
+    {
+      userId: 3,
+      name: 'Van',
+      recent: 'How R U',
+    },
+    {
+      userId: 4,
+      name: 'Bob',
+      recent: 'How R U',
+    },
+    {
+      userId: 5,
+      name: 'Anna',
+      recent: 'How R U',
+    },
+    {
+      userId: 6,
+      name: 'Ellen',
+      recent: 'How R U',
+    },
+    {
+      userId: 7,
+      name: 'Cindy',
+      recent: 'How R U',
+    },
+    {
+      userId: 8,
+      name: 'Mimi',
+      recent: 'How R U',
+    },
+    {
+      userId: 9,
+      name: 'Willam',
+      recent: 'How R U',
+    },
+    {
+      userId: 10,
+      name: 'Kevin',
+      recent: 'How R U',
+    },
+    {
+      userId: 11,
+      name: 'Larry',
+      recent: 'How R U',
+    },
+  ];
+  const { changeCowboy, currentCowboy } = props;
+  const [cowboys, setCowboys] = useState<Cowboy[]>(defaultCowboy);
   return (
     <div className="contacts__container">
       {cowboys.map((cowboy) => (
@@ -65,8 +76,15 @@ export default function Contacts(props: ContactsProps) {
           onClick={() => changeCowboy(cowboy)}
           onKeyPress={() => changeCowboy(cowboy)}
           tabIndex={-1}
+          className={
+            currentCowboy?.userId === cowboy.userId ? 'contacts--active' : ''
+          }
         >
-          <Cowboy name={cowboy.name} recent={cowboy.recent} />
+          <Cowboy
+            userId={cowboy.userId}
+            name={cowboy.name}
+            recent={cowboy.recent}
+          />
         </div>
       ))}
     </div>

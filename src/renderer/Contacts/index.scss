@@ -38,3 +38,12 @@
     visibility: show;
   }
 }
+
+.contacts--active {
+  .cowboy {
+    background-color: $contacts-bg-color--active;
+  }
+  .cowboy:hover {
+    background-color: $contacts-bg-color--active;
+  }
+}

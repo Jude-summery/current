@@ -4,19 +4,18 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 import './index.scss';
 
-const handleFrameOperation = (type: string) => {
-  if (type === 'minimize') {
-    window.electron.ipcRenderer.sendMessage('window-minimize', []);
-  }
-  if (type === 'fullscreen') {
-    window.electron.ipcRenderer.sendMessage('window-fullscreen', []);
-  }
-  if (type === 'close') {
-    window.electron.ipcRenderer.sendMessage('window-close', []);
-  }
-};
-
 export default function FrameOperation() {
+  const handleFrameOperation = (type: string) => {
+    if (type === 'minimize') {
+      window.electron.ipcRenderer.sendMessage('window-minimize', []);
+    }
+    if (type === 'fullscreen') {
+      window.electron.ipcRenderer.sendMessage('window-fullscreen', []);
+    }
+    if (type === 'close') {
+      window.electron.ipcRenderer.sendMessage('window-close', []);
+    }
+  };
   return (
     <div className="frame__operations">
       <button

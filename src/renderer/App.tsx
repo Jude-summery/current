@@ -4,14 +4,13 @@ import { CssBaseline } from '@mui/material';
 import Menu from './Menu';
 import Contacts from './Contacts';
 import Chat from './Chat';
+import Empty from './Empty';
+import FrameOperation from './FrameOperation';
 import './variable.scss';
 import './app.scss';
 
 const Layout = () => {
-  const [currentCowboy, setCurrentCowboy] = useState({
-    name: '',
-    recent: '',
-  });
+  const [currentCowboy, setCurrentCowboy] = useState<Cowboy | null>(null);
   return (
     <div id="app">
       <CssBaseline />
@@ -22,10 +21,12 @@ const Layout = () => {
         <div id="contacts">
           <Contacts
             changeCowboy={(cowboy: Cowboy) => setCurrentCowboy(cowboy)}
+            currentCowboy={currentCowboy}
           />
         </div>
         <div id="chat">
-          <Chat currentCowboy={currentCowboy} />
+          {currentCowboy ? <Chat currentCowboy={currentCowboy} /> : <Empty />}
+          <FrameOperation />
         </div>
       </div>
     </div>
